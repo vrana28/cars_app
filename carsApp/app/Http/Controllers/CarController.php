@@ -34,8 +34,8 @@ class CarController extends Controller
         $car->produced_on = $produced_on;
 
         $car->save();
-
-        return redirect()->back();
+        $request->session()->flash('status','Car was successfully added!');
+        return redirect()->route(route:"cars.index");
     }
 
     public function edit($car_id){

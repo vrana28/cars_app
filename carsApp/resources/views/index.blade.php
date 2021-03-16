@@ -9,6 +9,13 @@
         <a href="/cars/create" class="btn btn-sm btn-primary">Add New Car</a>
     </div>
 </div>
+
+@if(Session::has('status'))
+    <div class="alert alert-success">
+        {{Session::get('status')}}
+    </div>
+@endif
+
 <div class="table-responsive shadow rounded">
 <table class="table table-sm table-bordered table-striped tabel-hover">
                     <tr>

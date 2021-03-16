@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,8 @@ Route::delete('/cars/{car}',[
     'uses'=>'App\Http\Controllers\CarController@destroy',
     'as'=>'cars.delete'
 ]);
+
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+
+Auth::routes();
+

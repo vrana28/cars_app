@@ -6,6 +6,15 @@
 <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h2>Create a new Car</h2>
 </div>
+@if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $errors)
+                <li>{{$errors}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="{{route('cars.store')}}" method="post">
                 @csrf
                     <div class="row form-group">
