@@ -23,6 +23,7 @@
                         <th>Make</th>
                         <th>Model</th>
                         <th>Produced on</th>
+                        <th>User</th>
                         <th></th>
                     </tr>
                     @foreach($cars as $car)
@@ -31,6 +32,7 @@
                         <td>{{$car->make}}</td>
                         <td>{{$car->model}}</td>
                         <td>{{$car->produced_on}}</td>
+                        <td>{{$car->user_id}}</td>
                         <td class="text-center">
                             <a href="{{route('cars.edit',['car'=>$car])}}" class="btn btn-sm btn-primary">Edit</a>
                             <form class="d-inline" action="{{route('cars.delete',['car'=>$car])}}" method="post">

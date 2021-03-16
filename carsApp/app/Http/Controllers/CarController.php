@@ -11,6 +11,8 @@ class CarController extends Controller
     public function index(){
 
         $cars = Car::Paginate(request(key:'perPage',default:5));
+        //$user_id = auth()->user()->id;
+        //$user = User::find($user_id);
         //$cars = Car::all();
         return view('index',['cars'=>$cars]);
     }
@@ -32,6 +34,7 @@ class CarController extends Controller
         $car->make = $make;
         $car->model = $model;
         $car->produced_on = $produced_on;
+        $car->user_id = auth()->user()->id;
 
         $car->save();
         $request->session()->flash('status','Car was successfully added!');
